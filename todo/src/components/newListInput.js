@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 import List from './list';
 
@@ -6,8 +7,11 @@ const NewListInput = props => {
 
     const newTask = {
         item: props.newListItem,
-        completed: false
+        completed: false,
+        id: uuid()
     }
+
+    console.log(props.listItems)
 
     return(
         <div>

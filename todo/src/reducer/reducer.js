@@ -1,27 +1,17 @@
-export const initalState = {
-    todo: [
-        {
-            item: "Learn about reducers",
-            completed: false
-        },
-        {
-            item: "figure stuff out",
-            completed: false
-        }
-    ]
-}
+export const initalState = [
+    {
+        item: "Learn about reducers",
+        completed: false,
+        id: 3892987589
+    }
+]
 
 export const reducer = (state, action) => {
     switch (action.type) {
         case "HOPE_THIS_WORKS":
-            return {
-                ...state,
-                todo: [...state.todo, action.payload]
-            }
+            return [...state, action.payload]
         case "TOGGLE_COMPLETED":
-            return{
-                ...state,
-                todo: state.todo.map(task => {
+            return [...state, state.map(task => {
                     if(task.item === action.payload){
                         console.log(task.item);
                         console.log(task.completed);
@@ -31,8 +21,7 @@ export const reducer = (state, action) => {
                             completed: true
                         }
                     }
-                })
-            }
+                })]
         default:
             return state;
     }

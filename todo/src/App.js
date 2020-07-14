@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <FakeNav />
-      <NewListInput newListItem = {newListItem} onChange = {onChange} listItems = {state.todo} onSubmit = {onSubmit} dispatch = {dispatch} />
+      <NewListInput newListItem = {newListItem} onChange = {onChange} listItems = {state} onSubmit = {onSubmit} dispatch = {dispatch} />
     </div>
   );
 }
